@@ -2,7 +2,7 @@
 {
 public interface MviStateMapper<in IS, out ES>
     where IS : InternalMviState
-    where ES : MviState
+    where ES : ExternalMviState
 {
     public ES MapState(IS internalState);
 }

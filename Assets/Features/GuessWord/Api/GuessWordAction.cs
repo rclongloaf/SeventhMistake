@@ -2,7 +2,7 @@
 
 namespace Features.GuessWord.Api
 {
-public interface GuessWordAction : InternalMviAction, MviAction
+public interface GuessWordAction : InternalMviAction, ExternalMviAction
 {
     public record Start(string word) : GuessWordAction;
 

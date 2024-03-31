@@ -2,7 +2,7 @@
 
 namespace Features.GuessWordsScene.Core
 {
-public interface GuessWordsSceneAction : MviAction
+public interface GuessWordsSceneAction : ExternalMviAction
 {
     public record OnStartClicked : GuessWordsSceneAction;
 

@@ -6,9 +6,9 @@ namespace Core.Mvi.Core
 {
 public abstract class MviFeature<IA, EA, IS, ES, P>
     where IA : InternalMviAction
-    where EA : MviAction
+    where EA : ExternalMviAction
     where IS : InternalMviState
-    where ES : MviState
+    where ES : ExternalMviState
     where P : MviPatch
 {
     private readonly MviActionMapper<IA, EA> actionMapper;

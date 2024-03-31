@@ -5,7 +5,7 @@ namespace Core.Mvi.Core
 {
 public abstract class MviReducer<IS, ES, P>
     where IS : InternalMviState
-    where ES : MviState
+    where ES : ExternalMviState
     where P : MviPatch
 {
     private readonly MviStateMapper<IS, ES> stateMapper;

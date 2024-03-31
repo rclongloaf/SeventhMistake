@@ -3,7 +3,7 @@ using Features.GuessWord.Api;
 
 namespace Features.GuessWordsScene.Core
 {
-public interface GuessWordsSceneState : MviState
+public interface GuessWordsSceneState : ExternalMviState
 {
     public record StartScene : GuessWordsSceneState;
 
