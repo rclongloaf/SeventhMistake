@@ -26,7 +26,7 @@ public abstract class MviFeature<IA, EA, IS, ES, P>
 
         if (initialAction != null)
         {
-            ApplyAction(initialAction);
+            reducer.MviExecutor.DispatchInternal(() => { ApplyAction(initialAction); });
         }
     }
 
@@ -35,8 +35,11 @@ public abstract class MviFeature<IA, EA, IS, ES, P>
 
     public void SendAction(EA action)
     {
-        var internalAction = actionMapper.MapAction(action);
-        ApplyAction(internalAction);
+        reducer.MviExecutor.DispatchInternal(() =>
+        {
+            var internalAction = actionMapper.MapAction(action);
+            ApplyAction(internalAction);
+        });
     }
 
     protected abstract void ApplyAction(IA action);

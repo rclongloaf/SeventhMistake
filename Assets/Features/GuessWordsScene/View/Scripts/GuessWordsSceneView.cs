@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Mvi.Api.State;
+using Core.Mvi.Core;
 using Features.GuessWord.Api.Config;
 using Features.GuessWordsScene.Core;
 using Features.WordsProvider.Api;
@@ -19,16 +20,21 @@ public class GuessWordsSceneView : MonoBehaviour, MviStateConsumer<GuessWordsSce
     private GuessWordsSceneFeature feature = null!;
 
     [Inject]
-    public void Init(IWordsProvider wordsProvider)
+    public void Init(
+        IWordsProvider wordsProvider,
+        MviExecutor mviExecutor,
+        GuessWordConfig guessWordConfig
+    )
     {
         var reducer = new GuessWordsSceneReducer(
-            stateConsumer: this
+            stateConsumer: this,
+            mviExecutor: mviExecutor
         );
 
         feature = new GuessWordsSceneFeature(
             reducer: reducer,
             wordsProvider: wordsProvider,
-            guessWordConfig: new GuessWordConfig(mistakesCountForLose: 7)
+            guessWordConfig: guessWordConfig
         );
 
         startSceneView.OnStartClicked += () => { feature.SendAction(new GuessWordsSceneAction.OnStartClicked()); };

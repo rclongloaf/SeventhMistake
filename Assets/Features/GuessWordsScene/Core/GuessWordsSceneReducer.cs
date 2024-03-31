@@ -9,8 +9,9 @@ namespace Features.GuessWordsScene.Core
 public class GuessWordsSceneReducer : MviReducer<InternalState, GuessWordsSceneState, Patch>
 {
     public GuessWordsSceneReducer(
-        MviStateConsumer<GuessWordsSceneState> stateConsumer
-    ) : base(stateConsumer, new InternalState.WaitForStart()) { }
+        MviStateConsumer<GuessWordsSceneState> stateConsumer,
+        MviExecutor mviExecutor
+    ) : base(stateConsumer, mviExecutor, new InternalState.WaitForStart()) { }
 
     protected override MviStateMapper<InternalState, GuessWordsSceneState> ProvideStateMapper()
     {

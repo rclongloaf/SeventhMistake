@@ -2,7 +2,8 @@
     "name": "Core.Mvi.Core",
     "rootNamespace": "",
     "references": [
-        "GUID:ad61f365e0a5468c854566bc8ec6a032"
+        "GUID:ad61f365e0a5468c854566bc8ec6a032",
+        "GUID:4b74295f24d45a348807e9fee23cbc85"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

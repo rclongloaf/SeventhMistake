@@ -29,8 +29,11 @@ public class GuessWordsSceneFeature : MviFeature<
     {
         this.wordsProvider = wordsProvider;
 
+        var internalDispatcher = reducer.MviExecutor.InternalDispatcher;
+        
         var guessWordReducer = new GuessWordReducer(
-            stateConsumer: this
+            stateConsumer: this,
+            mviExecutor: new MviExecutor(internalDispatcher, internalDispatcher)
         );
         guessWordFeature = new GuessWordFeature(
             reducer: guessWordReducer,
@@ -67,7 +70,8 @@ public class GuessWordsSceneFeature : MviFeature<
 
     private void ApplyGuessLetterAction(InternalAction.GuessLetter action)
     {
-        if (State is not InternalState.Active activeState) return;
+        if (State is not InternalState.Active activeState
+            || activeState.guessWordState.status is not GuessWordActiveStatus.InProgress) return;
 
         guessWordFeature.SendAction(new GuessWordAction.GuessLetter(action.character));
     }

@@ -11,8 +11,9 @@ namespace Features.GuessWord.Core
 public class GuessWordReducer : MviReducer<InternalState, GuessWordState, Patch.Patch>
 {
     public GuessWordReducer(
-        MviStateConsumer<GuessWordState> stateConsumer
-    ) : base(stateConsumer, new InternalState.WaitingForStart()) { }
+        MviStateConsumer<GuessWordState> stateConsumer,
+        MviExecutor mviExecutor
+    ) : base(stateConsumer, mviExecutor, new InternalState.WaitingForStart()) { }
 
     protected override MviStateMapper<InternalState, GuessWordState> ProvideStateMapper()
     {

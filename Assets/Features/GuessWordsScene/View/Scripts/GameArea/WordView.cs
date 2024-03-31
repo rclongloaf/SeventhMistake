@@ -37,7 +37,6 @@ public class WordView : MonoBehaviour
     private void ReleaseItem(WordLetterView item)
     {
         item.gameObject.SetActive(false);
-        item.transform.SetParent(null);
         itemsPool.Push(item);
     }
 
@@ -45,7 +44,9 @@ public class WordView : MonoBehaviour
     {
         if (itemsPool.Count > 0)
         {
-            return itemsPool.Pop();
+            var item = itemsPool.Pop();
+            item.gameObject.SetActive(true);
+            return item;
         }
 
         return Instantiate(letterPrefab, transform);

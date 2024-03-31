@@ -12,13 +12,16 @@ public abstract class MviReducer<IS, ES, P>
     private readonly MviStateConsumer<ES> stateConsumer;
     
     public IS State { get; private set; }
+    public MviExecutor MviExecutor { get; private set; }
 
     protected MviReducer(
         MviStateConsumer<ES> stateConsumer,
+        MviExecutor mviExecutor,
         IS initialState
     )
     {
         this.stateConsumer = stateConsumer;
+        MviExecutor = mviExecutor;
         State = initialState;
         stateMapper = ProvideStateMapper();
     }
@@ -41,7 +44,10 @@ public abstract class MviReducer<IS, ES, P>
         State = newState;
 
         var externalState = stateMapper.MapState(newState);
-        stateConsumer.ConsumeState(externalState);
+        MviExecutor.DispatchExternal(() =>
+        {
+            stateConsumer.ConsumeState(externalState);
+        });
     }
 }
 }
