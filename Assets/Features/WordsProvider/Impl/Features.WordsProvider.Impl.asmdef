@@ -1,0 +1,16 @@
+{
+    "name": "Features.WordsProvider.Impl",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3e0495d54c44b2344b84d909e442bc9d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

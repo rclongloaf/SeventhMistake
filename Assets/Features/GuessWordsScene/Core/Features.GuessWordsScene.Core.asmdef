@@ -1,0 +1,21 @@
+{
+    "name": "Features.GuessWordsScene.Core",
+    "rootNamespace": "",
+    "references": [
+        "GUID:18804b19433484243b3b1e4f811353de",
+        "GUID:0b86464d5e68d0049936048389ef7c86",
+        "GUID:ad61f365e0a5468c854566bc8ec6a032",
+        "GUID:10da958a722fcc04cabcb6829b385e36",
+        "GUID:8df8c7bc989a94d41b9a77097866b058",
+        "GUID:3e0495d54c44b2344b84d909e442bc9d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

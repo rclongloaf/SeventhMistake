@@ -1,0 +1,17 @@
+{
+    "name": "Features.GuessWord.Api",
+    "rootNamespace": "",
+    "references": [
+        "GUID:18804b19433484243b3b1e4f811353de",
+        "GUID:ad61f365e0a5468c854566bc8ec6a032"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
